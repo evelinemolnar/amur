@@ -33,34 +33,32 @@
   padding: 0 40px;
 }
 
-/* Image slot placeholder */
-.roots-image-slot {
+.roots-hero__img {
   width: 100%;
   aspect-ratio: 16 / 7;
-  background: var(--cream-d);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  display: block;
   border-radius: 2px;
-  border: 1px dashed rgba(66,71,31,0.2);
 }
 
-.roots-split__media .roots-image-slot {
+.roots-split__media {
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.roots-split__img {
+  width: 100%;
   aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
 }
 
-.roots-closing-figure .roots-image-slot {
+.roots-closing__img {
+  width: 100%;
   aspect-ratio: 21 / 9;
-}
-
-.roots-image-slot__label {
-  font-family: var(--font-montserrat);
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--sage);
-  padding: 8px 16px;
-  text-align: center;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
 }
 
 /* Reading column */

@@ -6,13 +6,6 @@ import OliveBranch from '../components/OliveBranch';
 import PullQuote from '../components/PullQuote';
 import './Roots.css';
 
-function ImageSlot({ id, label }: { id: string; label: string }) {
-  return (
-    <div className="roots-image-slot" data-slot={id}>
-      <span className="roots-image-slot__label">{label}</span>
-    </div>
-  );
-}
 
 export default function Roots() {
   return (
@@ -25,7 +18,7 @@ export default function Roots() {
         <h1>Some things are more significant than what they <em>contain</em>.</h1>
         <div className="roots-hero__rule" />
         <figure className="roots-hero__figure">
-          <ImageSlot id="roots-hero" label="Hero image — warm, human, natural light" />
+          <img src="/images/hero.png" alt="" className="roots-hero__img" />
         </figure>
       </section>
 
@@ -66,7 +59,7 @@ export default function Roots() {
           </div>
         </div>
         <div className="roots-split__media">
-          <ImageSlot id="roots-children" label="Children — classroom or desks, natural light" />
+          <img src="/images/classroom.png" alt="" className="roots-split__img" />
         </div>
       </section>
 
@@ -95,7 +88,7 @@ export default function Roots() {
           </div>
         </div>
         <div className="roots-split__media">
-          <ImageSlot id="roots-health" label="Health — hospital corridor, calm, not distressing" />
+          <img src="/images/hospital.png" alt="" className="roots-split__img" />
         </div>
       </section>
 
@@ -119,7 +112,7 @@ export default function Roots() {
       </section>
 
       <figure className="roots-closing-figure">
-        <ImageSlot id="roots-closing" label="Closing — child looking forward, not at camera" />
+        <img src="/images/closing.png" alt="" className="roots-closing__img" />
       </figure>
 
       <PullQuote mark>

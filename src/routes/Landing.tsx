@@ -125,8 +125,7 @@ export default function Landing() {
         {/* Bottom bar */}
         <div className="landing__bar">
           <span>Est. MMXXVI · Single-Estate</span>
-          <span>Two worlds. One oil.</span>
-          <span>Scroll ↓</span>
+          <span style={{ marginLeft: 'auto' }}>Two worlds. One oil.</span>
         </div>
       </div>
     </div>
