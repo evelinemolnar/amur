@@ -108,6 +108,16 @@
   border-radius: 3px 3px 0 0;
 }
 
+/* Mobile-only elements hidden on desktop */
+.nav__mobile-cart,
+.nav__burger {
+  display: none;
+}
+
+.nav__drawer {
+  display: none;
+}
+
 @media (max-width: 880px) {
   .nav {
     height: 70px;
@@ -118,8 +128,99 @@
     font-size: 30px;
   }
 
-  .nav__left a:nth-child(n+2),
-  .nav__right a:not(.nav__cart) {
+  /* Hide desktop links */
+  .nav__left,
+  .nav__right .nav__link,
+  .nav__right .nav__cart {
     display: none;
+  }
+
+  /* Show mobile controls */
+  .nav__mobile-cart,
+  .nav__burger {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__mobile-cart {
+    color: inherit;
+  }
+
+  .nav__burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: inherit;
+  }
+
+  .nav__burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+  }
+
+  .nav__burger-icon span {
+    display: block;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 220ms ease, opacity 220ms ease;
+    transform-origin: center;
+  }
+
+  .nav__burger-icon--open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .nav__burger-icon--open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__burger-icon--open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* Drawer */
+  .nav__drawer {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 240, 228, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 29;
+  }
+
+  .nav__drawer-list {
+    list-style: none;
+    margin: 0;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(66, 71, 31, 0.12);
+  }
+
+  .nav__drawer-link {
+    display: block;
+    font-family: var(--font-montserrat);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--olive);
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(66, 71, 31, 0.08);
+    transition: color 160ms;
+  }
+
+  .nav__drawer-link:hover,
+  .nav__drawer-link--active {
+    color: var(--coral);
   }
 }
