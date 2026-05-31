@@ -1,0 +1,121 @@
+.footer--full {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 80px 40px 40px;
+  border-top: 1px solid rgba(66, 71, 31, 0.12);
+  background: var(--cream);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__logo {
+  font-family: var(--font-italiana);
+  font-size: 44px;
+  letter-spacing: 0.32em;
+  padding-left: 0.32em;
+  color: var(--olive);
+}
+
+.footer__tagline {
+  font-family: var(--font-baskerville);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--sage);
+  line-height: 1.7;
+}
+
+.footer__heading {
+  font-family: var(--font-montserrat);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mustard);
+  margin: 0 0 16px;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__links a {
+  font-family: var(--font-quicksand);
+  font-size: 13px;
+  color: var(--olive);
+  text-decoration: none;
+  transition: color 180ms;
+}
+
+.footer__links a:hover {
+  color: var(--coral);
+}
+
+.footer__legal {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid rgba(66, 71, 31, 0.12);
+  font-family: var(--font-montserrat);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.footer--slim {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 40px;
+  border-top: 1px solid rgba(66, 71, 31, 0.12);
+}
+
+.footer--slim .footer__logo {
+  font-size: 30px;
+}
+
+.footer__legal-text {
+  font-family: var(--font-montserrat);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+@media (max-width: 880px) {
+  .footer--full {
+    grid-template-columns: 1fr 1fr;
+    padding: 60px 20px 32px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer__legal {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer--slim {
+    padding: 24px 20px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

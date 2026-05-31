@@ -1,0 +1,15 @@
+:root {
+  --cream: #F5F0E4;
+  --cream-d: #ece5d3;
+  --paper: #fbf7ec;
+  --mustard: #D1A649;
+  --olive: #42471F;
+  --olive-d: #2b2e15;
+  --coral: #ED7B58;
+  --sage: #8B8C73;
+
+  --font-italiana: 'Italiana', serif;
+  --font-baskerville: 'Libre Baskerville', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-quicksand: 'Quicksand', sans-serif;
+}
