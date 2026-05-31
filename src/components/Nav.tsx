@@ -31,9 +31,22 @@ export default function Nav({ activePage, light }: NavProps) {
     <>
       <nav className={['nav', light ? 'nav--light' : ''].filter(Boolean).join(' ')}>
         <div className="nav__left">
+          {/* Desktop links */}
           {link('/story', 'Story')}
           {link('/provenance', 'Provenance')}
           {link('/olive-school', 'Olive School')}
+          {/* Mobile burger */}
+          <button
+            className="nav__burger"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(o => !o)}
+            type="button"
+          >
+            <span className={`nav__burger-icon${menuOpen ? ' nav__burger-icon--open' : ''}`}>
+              <span /><span /><span />
+            </span>
+          </button>
         </div>
         <Link to="/" className="nav__logo">AMUR</Link>
         <div className="nav__right">
@@ -52,8 +65,7 @@ export default function Nav({ activePage, light }: NavProps) {
             <span className="nav__bag" aria-hidden="true" />
             <span>Waiting List</span>
           </Link>
-
-          {/* Mobile-only controls */}
+          {/* Mobile bag icon */}
           <Link
             to="/waitlist"
             className="nav__mobile-cart"
@@ -61,17 +73,6 @@ export default function Nav({ activePage, light }: NavProps) {
           >
             <span className="nav__bag" aria-hidden="true" />
           </Link>
-          <button
-            className="nav__burger"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(o => !o)}
-            type="button"
-          >
-            <span className={`nav__burger-icon${menuOpen ? ' nav__burger-icon--open' : ''}`}>
-              <span /><span /><span />
-            </span>
-          </button>
         </div>
       </nav>
 
