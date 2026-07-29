@@ -1,0 +1,20 @@
+.announce {
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  padding: 9px 16px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  overflow: hidden;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announce__msg {
+  opacity: 0.92;
+  animation: amurIn 0.6s ease both;
+}

@@ -1,15 +1,66 @@
 :root {
-  --cream: #F5F0E4;
-  --cream-d: #ece5d3;
-  --paper: #fbf7ec;
-  --mustard: #D1A649;
-  --olive: #42471F;
-  --olive-d: #2b2e15;
-  --coral: #ED7B58;
-  --sage: #8B8C73;
+  /* Palette */
+  --ink: #11100e;
+  --cream: #f5f0e6;
+  --forest: #28311e;
+  --forest-deep: #1d2415;
+  --green: #52613b;
+  --gold: #c99a32;
+  --accent: #f4cd3f;
+  --sand: #cdb99f;
+  --sand-light: #ded0be;
+  --sand-done: #e7dfcf;
+  --shell: #fbf9f3;
+  --parchment: #efe8d9;
+  --white: #fff;
 
-  --font-italiana: 'Italiana', serif;
-  --font-baskerville: 'Libre Baskerville', serif;
-  --font-montserrat: 'Montserrat', sans-serif;
-  --font-quicksand: 'Quicksand', sans-serif;
+  /* Ink alphas */
+  --ink-04: rgba(17, 16, 14, 0.04);
+  --ink-08: rgba(17, 16, 14, 0.08);
+  --ink-12: rgba(17, 16, 14, 0.12);
+  --ink-14: rgba(17, 16, 14, 0.14);
+  --ink-16: rgba(17, 16, 14, 0.16);
+  --ink-20: rgba(17, 16, 14, 0.2);
+  --ink-25: rgba(17, 16, 14, 0.25);
+  --ink-30: rgba(17, 16, 14, 0.3);
+  --ink-35: rgba(17, 16, 14, 0.35);
+  --ink-40: rgba(17, 16, 14, 0.4);
+  --ink-45: rgba(17, 16, 14, 0.45);
+  --ink-50: rgba(17, 16, 14, 0.5);
+  --ink-55: rgba(17, 16, 14, 0.55);
+  --ink-60: rgba(17, 16, 14, 0.6);
+  --ink-65: rgba(17, 16, 14, 0.65);
+  --ink-68: rgba(17, 16, 14, 0.68);
+  --ink-70: rgba(17, 16, 14, 0.7);
+  --ink-72: rgba(17, 16, 14, 0.72);
+  --ink-74: rgba(17, 16, 14, 0.74);
+
+  /* Cream alphas — for use on dark grounds */
+  --cream-12: rgba(245, 240, 230, 0.12);
+  --cream-14: rgba(245, 240, 230, 0.14);
+  --cream-16: rgba(245, 240, 230, 0.16);
+  --cream-18: rgba(245, 240, 230, 0.18);
+  --cream-35: rgba(245, 240, 230, 0.35);
+  --cream-40: rgba(245, 240, 230, 0.4);
+  --cream-45: rgba(245, 240, 230, 0.45);
+  --cream-50: rgba(245, 240, 230, 0.5);
+  --cream-60: rgba(245, 240, 230, 0.6);
+  --cream-62: rgba(245, 240, 230, 0.62);
+  --cream-65: rgba(245, 240, 230, 0.65);
+  --cream-68: rgba(245, 240, 230, 0.68);
+  --cream-72: rgba(245, 240, 230, 0.72);
+  --cream-82: rgba(245, 240, 230, 0.82);
+  --cream-86: rgba(245, 240, 230, 0.86);
+  --cream-88: rgba(245, 240, 230, 0.88);
+
+  /* Type */
+  --font-serif: 'Cormorant', Georgia, serif;
+  --font-sans: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Rhythm */
+  --wrap: 1320px;
+  --gutter: clamp(32px, 6vw, 96px);
+  --section-y: clamp(80px, 10vw, 140px);
+  --sticky-top: 96px;
 }

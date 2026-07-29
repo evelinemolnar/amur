@@ -1,0 +1,226 @@
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: rgba(17, 16, 14, 0.4);
+  transition: opacity 0.35s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.drawer-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  width: min(440px, 100vw);
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -20px 0 60px rgba(17, 16, 14, 0.18);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.1, 1);
+  transform: translateX(105%);
+}
+
+.drawer.is-open {
+  transform: translateX(0);
+}
+
+.drawer__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--ink-12);
+}
+
+.drawer__title {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.drawer__close {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.drawer__ship {
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(17, 16, 14, 0.1);
+}
+
+.drawer__ship-msg {
+  font-size: 12px;
+  color: var(--ink-60);
+  margin-bottom: 8px;
+}
+
+.drawer__ship-track {
+  height: 4px;
+  background: var(--ink-12);
+}
+
+.drawer__ship-bar {
+  height: 4px;
+  background: var(--accent);
+  transition: width 0.4s;
+}
+
+.drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 28px;
+}
+
+.drawer__empty {
+  text-align: center;
+  padding: 70px 0;
+  color: var(--ink-55);
+}
+
+.drawer__empty-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.drawer__empty-cta {
+  padding: 14px 28px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.drawer__line {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--ink-08);
+}
+
+.drawer__line-img {
+  width: 74px;
+  height: 92px;
+  flex: none;
+}
+
+.drawer__line-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer__line-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.drawer__line-name {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.drawer__remove {
+  color: var(--ink-40);
+  font-size: 13px;
+  transition: color 0.25s;
+}
+
+.drawer__remove:hover {
+  color: var(--ink);
+}
+
+.drawer__line-mode {
+  font-size: 11px;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.drawer__line-foot {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer__line-price {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.drawer__foot {
+  padding: 22px 28px;
+  border-top: 1px solid var(--ink-12);
+}
+
+.drawer__subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.drawer__subtotal-value {
+  font-weight: 600;
+}
+
+.drawer__note {
+  font-size: 12px;
+  color: var(--ink-50);
+  margin-bottom: 18px;
+}
+
+.drawer__foot .btn {
+  padding: 17px;
+  font-weight: 700;
+}
+
+/* ---------- Quantity stepper (shared with PDP) ---------- */
+
+.qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--ink-30);
+}
+
+.qty__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  color: inherit;
+}
+
+.qty__value {
+  width: 44px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.qty--sm {
+  border-color: var(--ink-25);
+}
+
+.qty--sm .qty__btn {
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+}
+
+.qty--sm .qty__value {
+  width: 32px;
+  font-size: 14px;
+  font-weight: 400;
+}

@@ -1,55 +1,74 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-interface FooterProps {
-  variant?: 'full' | 'slim';
-}
-
-export default function Footer({ variant = 'full' }: FooterProps) {
-  if (variant === 'slim') {
-    return (
-      <footer className="footer footer--slim">
-        <span className="footer__logo">AMUR</span>
-        <span className="footer__legal-text">© AMUR · Toscana · MMXXVI</span>
-        <span className="footer__legal-text">Made slow · Poured bold</span>
-      </footer>
-    );
-  }
-
+export default function Footer() {
   return (
-    <footer className="footer footer--full">
-      <div className="footer__brand">
-        <span className="footer__logo">AMUR</span>
-        <p className="footer__tagline">Olive oil from northern Tuscany.<br />Pressed slow, poured bold.</p>
-      </div>
-      <div className="footer__col">
-        <h4 className="footer__heading">Shop</h4>
-        <ul className="footer__links">
-          <li><Link to="/waitlist">Single Estate</Link></li>
-          <li><Link to="/waitlist">The Signature</Link></li>
-          <li><Link to="/waitlist">Gift Sets</Link></li>
-        </ul>
-      </div>
-      <div className="footer__col">
-        <h4 className="footer__heading">House</h4>
-        <ul className="footer__links">
-          <li><Link to="/story">Story</Link></li>
-          <li><Link to="/provenance">Provenance</Link></li>
-          <li><Link to="/olive-school">Olive School</Link></li>
-          <li><Link to="/roots">Roots</Link></li>
-        </ul>
-      </div>
-      <div className="footer__col">
-        <h4 className="footer__heading">Care</h4>
-        <ul className="footer__links">
-          <li><Link to="/waitlist">Shipping</Link></li>
-          <li><Link to="/waitlist">Returns</Link></li>
-          <li><Link to="/waitlist">Contact</Link></li>
-        </ul>
-      </div>
-      <div className="footer__legal">
-        <span>© AMUR · Toscana · MMXXVI</span>
-        <span>Made slow · Poured bold</span>
+    <footer className="footer">
+      <div className="wrap">
+        <div className="footer__cols">
+          <div>
+            <div className="eyebrow eyebrow--accent footer__tagline">
+              Mediterranean wellness, bottled
+            </div>
+            <p className="footer__blurb">
+              Take your Mediterranean minute. One shot. One ritual. Every day.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="footer__heading">Shop</h4>
+            <div className="footer__list">
+              <Link to="/shop" className="footer__link">
+                All products
+              </Link>
+              <Link to="/subscribe" className="footer__link">
+                Subscription
+              </Link>
+              <Link to="/ritual" className="footer__link">
+                The Ritual
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="footer__heading">Discover</h4>
+            <div className="footer__list">
+              <Link to="/wellness" className="footer__link">
+                Wellness
+              </Link>
+              <Link to="/story" className="footer__link">
+                Our Story
+              </Link>
+              <span className="footer__soon">Journal — soon</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="footer__heading">Follow</h4>
+            <div className="footer__list">
+              <a href="#" className="footer__link">
+                Instagram
+              </a>
+              <a href="#" className="footer__link">
+                TikTok
+              </a>
+              <a href="#" className="footer__link">
+                Pinterest
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer__wordmark">amur</div>
+
+        <div className="footer__legal">
+          <span>© 2026 AMUR — Prototype. Placeholder business information.</span>
+          <span className="footer__legal-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Delivery</a>
+          </span>
+        </div>
       </div>
     </footer>
   );

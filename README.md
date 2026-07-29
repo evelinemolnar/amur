@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# AMUR — Mediterranean wellness, bottled
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Storefront for AMUR: a daily 25 ml shot of Tuscan extra virgin olive oil, Amalfi lemon, wild
+mint and fleur de sel. React 19 + TypeScript + Vite, with react-router for routing.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # tsc -b && vite build
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Routes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Path            | Page                                                             |
+| --------------- | ---------------------------------------------------------------- |
+| `/`             | Home — hero, manifesto, evidence teaser, lifestyle, shop preview  |
+| `/shop`         | Product grid with category filters                               |
+| `/product/:id`  | PDP — gallery, one-time vs. subscription, accordions             |
+| `/wellness`     | The evidence — compounds, fasted-dose rationale, EFSA references |
+| `/ritual`       | The 60-second ritual player and morning scheduler                |
+| `/story`        | Brand story                                                      |
+| `/subscribe`    | Subscription plans                                               |
+| `/checkout`     | Prototype checkout and order confirmation                        |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Structure
+
+- `src/data/catalog.ts` — the single source of truth for products, pricing, copy blocks
+  (accordions, ritual steps, morning schedule) and the money/discount helpers.
+- `src/cart/` — cart state. `context.ts` holds the context and types, `CartProvider.tsx` the
+  provider, `useCart.ts` the hook. Free delivery unlocks at €49.
+- `src/components/` — announcement bar, nav + mobile menu, cart drawer, product card, footer.
+- `src/routes/` — one component + one stylesheet per page.
+- `src/styles/tokens.css` — palette, type and rhythm variables; `src/index.css` holds the
+  reset, keyframes and the shared `.wrap` / `.section` / `.btn` / `.eyebrow` primitives.
+- `public/assets/` — product and editorial photography.
+
+Breakpoints are 1000px (two-column layouts collapse) and 760px (grids go single-column, the
+nav switches to the burger menu, the PDP gains a sticky add-to-bag bar).
+
+## Notes
+
+Checkout is a prototype: no payment is processed and no order is placed. Pricing, reviews,
+ratings and nutritional values are placeholder pending final formulation.
